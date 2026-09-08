@@ -83,3 +83,92 @@ while left<right:
         left+=1
     else:
         right-=1
+#hashing technique
+nums = [2, 7, 11, 15]
+target = 9
+seen = {}
+for i, num in enumerate(nums):
+    complement = target - num
+    if complement in seen:
+        print([seen[complement], i])
+        break
+    seen[num] = i
+nums = [3, 2, 4]
+target = 6
+seen={}
+for i, num in enumerate(nums):
+    complement=target-num
+    if complement in seen:
+        print([seen[complement],i])
+        break
+    seen[num]=i
+#duplicates
+nums = [1, 2, 3, 1]
+seen = set()
+for num in nums:
+    if num in seen:
+        print("Duplicate found:", num)
+    seen.add(num)
+#valid anagram
+s = "anagram"
+t = "nagaram"
+freq_s = {}
+freq_t = {}
+for char in s:
+    freq_s[char] = freq_s.get(char, 0) + 1
+for char in t:
+    freq_t[char] = freq_t.get(char, 0) + 1
+if freq_s==freq_t:
+    print(True)
+else:
+    print(False)
+#window sliding techique
+nums = [2, 1, 5, 1, 3, 5]
+k = 3 
+window_sum = sum(nums[:k])
+max_sum=window_sum
+for i in range(k, len(nums)):
+    window_sum += nums[i] -nums[i-k]
+    max_sum=max(max_sum,window_sum)
+print(max_sum)
+#linear search example
+products = [105, 203, 310, 415, 502]
+target = 415
+found=False
+for i in range(len(products)):
+    if products[i]==target:
+        found=True
+        break
+if found:
+    print("Product found at index:",i)
+else:
+    print(("Product not foound"))
+#example
+def linear_search(nums, target):
+    for i in range(len(nums)):
+        if nums[i]==target:
+            return i
+    return -1
+nums = [4, 7, 1, 9, 3]
+target = 10
+index=linear_search(nums,target)
+if index!=-1:
+    print("Element found at index:",index)
+else:
+    print("Element not found")
+#binary example
+nums = [2, 5, 8, 12, 16, 23, 38, 45, 56, 72]
+target=56
+left = 0
+right = len(nums) - 1
+while left <= right:
+    mid = (left + right) // 2
+    if nums[mid] == target:
+        print("Element found at index", mid)
+        break
+    elif nums[mid] < target:
+        left = mid + 1
+    else:
+            right = mid - 1
+else:
+    print("Element not found")  
