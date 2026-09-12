@@ -171,4 +171,69 @@ while left <= right:
     else:
             right = mid - 1
 else:
-    print("Element not found")  
+    print("Element not found") 
+#finding largest and second largest without using max() and sorting
+numbers = [10, 25, 15, 40]
+largest=numbers[0]
+second_largest=numbers[1]
+for i in range(len(numbers)):
+    if numbers[i]>largest:
+        second_largest=largest
+        largest=numbers[i]
+    elif numbers[i]>second_largest:
+        second_largest=numbers[i] 
+print(largest)
+print(second_largest)
+#better approach
+numbers=[10,25,15,40]
+largest=float("-inf")
+second_largest=float("-inf")
+for i in range(len(numbers)):
+    if numbers[i]>largest:
+        second_largest=largest
+        largest=numbers[i]
+    elif numbers[i]>second_largest and numbers[i]!=largest:
+        second_largest=numbers[i]
+print("largest:",largest)
+print("second_largest:",second_largest)
+#frequency and counting
+numbers = [2, 3, 2, 5, 3, 2]
+frequency={}
+for i in numbers:
+    if i in frequency:
+        frequency[i]+=1
+    else:
+        frequency[i]=1
+print(frequency)
+#duplicates
+numbers = [4, 7, 2, 4, 9, 7, 7]
+frequency={}
+for i in numbers:
+    if i in frequency:
+        frequency[i]+=1
+    else:
+        frequency[i]=1
+print(frequency)
+for number in frequency:
+    if frequency[number]>1:
+        print("Duplicate found:",number)
+#using set to find duplicates
+numbers = [4, 7, 2, 4, 9, 7, 7]
+seen=set()
+for number in numbers:
+    if number in seen:
+        print("Duplicate found:",number)
+    else:
+        seen.add(number)
+#two sum using hashmap
+numbers = [2, 7, 11, 15]
+target = 9
+seen=set()
+for number in numbers:
+    complement=target-number
+    if complement in seen:
+        print("Pair found:",complement,number)
+    else:
+        seen.add(number)
+# Practiced array hashing and Two Sum
+print("Git practice completed")
