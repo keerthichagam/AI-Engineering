@@ -235,5 +235,52 @@ for number in numbers:
         print("Pair found:",complement,number)
     else:
         seen.add(number)
-# Practiced array hashing and Two Sum
-print("Git practice completed")
+# two pointers
+def two_sum_sorted(nums, target):
+    left=0
+    right=len(nums)-1
+    while left<right:
+        current_sum=nums[left]+nums[right]
+        if current_sum==target:
+            return (nums[left],nums[right])
+        elif current_sum<target:
+            left+=1
+        else:
+            right-=1
+    return None
+nums = [1, 2, 3, 4, 6, 8, 10]
+target = 10
+print(two_sum_sorted(nums, target))
+#frequency counting using dictionary
+def frequency_count(nums):
+    count={}
+    for x in nums:
+      if x in count:
+        count[x]=count[x]+1
+      else:
+        count[x]=1
+    return count
+nums = [4, 1, 4, 2, 1, 4]
+print(frequency_count(nums))
+#most frequent 
+def most_frequent(nums):
+    count={}
+    for x in nums:
+      if x in count:
+        count[x]=count[x]+1
+      else:
+        count[x]=1
+    return max(count,key=count.get)
+nums = [4, 7, 2, 7, 9, 4, 7]
+print(most_frequent(nums))
+#two sum using hashmap
+def two_sum(nums, target):
+    seen = {}
+    for i, current in enumerate(nums):
+        needed = target - current
+        if needed in seen:
+          return [seen[needed], i]
+        seen[current]=i
+nums = [2, 7, 11, 15]
+target = 9
+print(two_sum(nums, target))
