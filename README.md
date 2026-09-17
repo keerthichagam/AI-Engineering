@@ -48,13 +48,13 @@ AI-Engineering/
 ```
 ## Screenshots
 
-### Student Marks Prediction
-
-![Student Marks Prediction](Screenshot%202026-09-16%20070039.png)
-
 ### FastAPI Swagger API
 
-![FastAPI Swagger API](Screenshot%202026-09-16%20070115.png)
+![FastAPI Swagger API](Screenshot%202026-09-16%20070039.png)
+
+### Student Marks Prediction
+
+![Student Marks Prediction](Screenshot%202026-09-16%20070115.png)
 ## What I Learned
 While building this project, I learned and practiced:
 - Training a Linear Regression model
